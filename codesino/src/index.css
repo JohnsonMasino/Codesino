@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+body {
+    @apply bg-cover  bg-center bg-no-repeat;
+    background-image: url('background.avif');
+    background-size: cover;
+}
