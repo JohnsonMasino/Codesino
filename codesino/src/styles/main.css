@@ -22,13 +22,36 @@ html, body {
     min-height: 100vh;
 }
 
+.text-gradient {
+    background: linear-gradient(
+        to bottom,
+        white 0%, /* Start with white at the top */
+        white 40%, /* Extend white to cover the top 30% */
+        #FF69B4 40%, /* Start the pink gradient at 30% */
+        #FF69B4 60%, /* Extend pink to cover up to 60% */
+        #FF0000 60%, /* Start the red gradient at 60% */
+        #FF0000 40%, /* Extend red to cover up to 80% */
+        #B0B0B0 80%, /* Start the ash gray color at 80% */
+        #B0B0B0 100% /* End with ash gray */
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline;
+}
+
+
+  
+
 /* Center the form */
 .contact-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px; /* Add padding for mobile spacing */
+    box-sizing: border-box;
 }
+
 
 /* Form styling */
 .contact-form {
@@ -114,7 +137,6 @@ html, body {
     background: #1A0026;
     color: white;
     padding: 40px 20px;
-    text-align: start;
 }
 
 .footer-content {
@@ -138,6 +160,9 @@ html, body {
 
 .footer-links ul li {
     margin-bottom: 8px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-links ul li a {
@@ -173,7 +198,7 @@ html, body {
 .footer-bottom {
     margin-top: 20px;
     font-size: 14px;
-    opacity: 0.8;
+    opacity: 0.8
 }
 
 .footer-content {

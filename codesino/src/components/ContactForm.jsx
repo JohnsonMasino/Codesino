@@ -4,7 +4,7 @@ import { Mail, User, MessageCircle } from 'lucide-react';
 
 const ContactForm = () => {
   return (
-    <div className="contact-container">
+    <div className="contact-container w-full max-w-md mx-auto px-4">
       <div className="contact-form">
         <h2 className="contact-title">Contact Us</h2>
         <form className="contact-form-body">
