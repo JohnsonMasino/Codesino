@@ -1,0 +1,245 @@
+:root {
+    --color-text: #111827;
+    --color-background: linear-gradient(
+        to right,
+        #2A003E 0%, /* Very dark purple on the left */
+        #2A003E 45%, /* Gradual start *//* Very small portion of pink */
+        #1A0026 60%, /* Smooth transition to darker purple */
+        #1A0026 100% /* Even darker purple on the right */
+    ); /* Softer transitions, less pink */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background: var(--color-background);
+    color: var(--color-text);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* Center the form */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Form styling */
+.contact-form {
+    background-color: rgba(245, 245, 245, 0.9); /* Smoky white */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Title styling */
+.contact-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+.input-group input,
+.input-group textarea {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    padding-left: 8px;
+}
+
+.textarea-group {
+    align-items: flex-start;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Icons */
+.input-icon {
+    color: #888;
+}
+
+/* Button */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      #2A003E 0%,
+      #2A003E 45%,
+      #1A0026 60%,
+      #1A0026 100%
+    );
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    border: none;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+}
+
+/* Footer Styling */
+.footer-container {
+    background: #1A0026;
+    color: white;
+    padding: 40px 20px;
+    text-align: start;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-brand h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ff79c6;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-social .social-icons a {
+    color: white;
+    transition: transform 0.3s;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+
+/* Newsletter Form */
+/* Subscription Form Styling */
+.footer-newsletter {
+    padding: 1.5rem 0;
+}
+
+.footer-newsletter h3 {
+    color: white;
+    font-size: 2.0rem; /* Increased text size */
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.footer-newsletter p {
+    color: #D1D5DB;
+    margin-bottom: 1.5rem;
+}
+
+/* Flexbox layout to keep input and button side by side */
+.footer-newsletter .flex {
+    display: flex;
+    align-items: center;
+}
+
+.footer-newsletter .max-w-md {
+    max-width: 600px; /* Increased width */
+}
+
+/* Styling the input field */
+.footer-newsletter input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    outline: none;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #4B5563;
+}
+
+/* Styling the subscribe button */
+.footer-newsletter button {
+    padding: 0.75rem 1.5rem; /* Increased padding */
+    margin-left: 0.5rem;
+    background-color: #2563EB;
+    border: none;
+    border-radius: 0.375rem;
+    color: white;
+    font-size: 1.125rem; /* Increased font size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #1D4ED8;
+}

@@ -1,14 +1,18 @@
-import React from 'react';
-import Header from '../components/Header.jsx';
+import React from 'react'
+import "../styles/main.css";
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import Footer from '../components/Footer';
 
 const Home = () => {
-    return (
-        <div style={{ textAlign: 'center'}} className='p-[1px]' >
-            <Header />
-            <h1>Welcome to Codesino</h1>
-            <p>Tailwind css is installed fine!</p>
-        </div>
-    );
-};
+  return (
+    <>
 
-export default Home;
+        <ResponsiveAppBar/>
+        <Footer/>
+    
+    
+    </>
+  )
+}
+
+export default Home
