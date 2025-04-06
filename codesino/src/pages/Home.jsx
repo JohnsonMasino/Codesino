@@ -1,18 +1,24 @@
-import React from 'react';
-import Header from '../components/Header.jsx';
-import Footer from '../components/Footer.jsx';
+import React from 'react'
+import "../styles/main.css";
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
+import Footer from '../components/Footer';
+import CallToAction from '../components/Call_To_Action';
+import HeroTextOnly from '../components/HeroSection';
+import ImageWithText from '../components/WhyUs';
 
 const Home = () => {
-    return (
-        <div className='flex flex-col min-h-screen'>
-            <Header />
-            <main className='flex-grow flex items-center justify-center'>
-                <h1>Welcome to Codesino</h1>
-                <p>Tailwind css is working</p>
-            </main>
-            <Footer />
-        </div>
-    );
-};
+  return (
+    <>
 
-export default Home;
+        <ResponsiveAppBar/>
+        <HeroTextOnly/>
+        <CallToAction />
+        <ImageWithText/>
+        <Footer />
+    
+    
+    </>
+  )
+}
+
+export default Home
