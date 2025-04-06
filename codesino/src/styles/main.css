@@ -136,7 +136,6 @@ html, body {
 .footer-container {
     background: #1A0026;
     color: white;
-    padding: 40px 20px;
 }
 
 .footer-content {
@@ -213,9 +212,7 @@ html, body {
 
 /* Newsletter Form */
 /* Subscription Form Styling */
-.footer-newsletter {
-    padding: 1.5rem 0;
-}
+
 
 .footer-newsletter h3 {
     color: white;

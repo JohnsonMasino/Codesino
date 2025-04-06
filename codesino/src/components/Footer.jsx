@@ -1,16 +1,15 @@
+// Footer.js
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import '../styles/main.css'; // Assuming you have a CSS file for styling
 import SubscriptionForm from './SubscriptionForm';
-import { Link } from 'react-router-dom'; 
 
 const Footer = () => {
   return (
-    <>
-    <footer className="footer-container container bg-gray-900 text-white py-10 px-6">
-        {/* Newsletter Subscription */}
-        <SubscriptionForm />    
-      <div className="footer-content max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <footer className="footer-container container bg-gray-900 text-white py-10">
+      {/* Newsletter Subscription */}
+      <SubscriptionForm />
+
+      <div className="footer-content max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8"> 
         
         {/* Contact Us */}
         <div className="footer-contact">
@@ -54,11 +53,10 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="footer-bottom text-center py-4 flex justify-center">
+      <div className="footer-bottom text-center py-4">
         <p>&copy; {new Date().getFullYear()} Codesino. All Rights Reserved.</p>
       </div>
     </footer>
-    </>
   );
 };
 
