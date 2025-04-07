@@ -1,15 +1,18 @@
 import React from 'react'
-import BlogCards from '../components/Blog/BlogCards'
+
 import Footer from '../components/Footer'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import "../styles/blog.css";
+import BlogContainer from '../components/Blog/BlogContainer';
+
 
 
 const Blog = () => {
   return (
     <>
         <ResponsiveAppBar/>
-        <BlogCards/>
+        <BlogContainer/>
+        
         <Footer/>
                                       
     
