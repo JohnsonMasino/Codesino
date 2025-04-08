@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
+import CookieConsent from "./components/CookieConsent";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <CookieConsent />
     </>
   );
 }

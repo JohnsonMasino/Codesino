@@ -104,7 +104,7 @@ const AboutInfo = () => {
         <p className="text-lg mb-6">Have a project in mind or want to collaborate? We’d love to hear from you.</p>
         <a
           href="/contact"
-          className="inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition"
+          className="inline-block bg-white hover:bg-blue-600 text-indigo-600  hover:text-white font-semibold py-3 px-6 rounded-full transition"
         >
           Get In Touch
         </a>
