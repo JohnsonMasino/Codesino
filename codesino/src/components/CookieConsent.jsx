@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  
 import logo from '../assets/images/logo.png';
+import { loadGoogleAnalytics } from '../utils/Analytics';
 
 const CookieConsent = () => {
   const [cookies, setCookie] = useCookies(['cookie_consent']);
@@ -11,6 +12,11 @@ const CookieConsent = () => {
 
   useEffect(() => {
     AOS.init({ duration: 800 });
+
+    if (cookies.cookie_consent === 'true') {
+      loadGoogleAnalytics();
+      return;
+    }
 
     const timer = setTimeout(() => {
       if (!cookies.cookie_consent) setShowBanner(true);
@@ -28,6 +34,7 @@ const CookieConsent = () => {
     setShowBanner(false);
 
     if (accept) {
+      loadGoogleAnalytics();
       console.log('✅ Cookies accepted');
     } else {
       console.log('❌ Cookies declined');
