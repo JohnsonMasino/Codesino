@@ -13,7 +13,7 @@ const SubscriptionForm = () => {
               placeholder="Enter your email"
               className="flex-grow px-4 py-3 outline-none text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-blue-600 text-white px-6 py-3 hover:bg-blue-700 transition-colors duration-200">
+            <button className="bg-blue-600 hover:bg-[#2A003E] text-white px-6 py-3 transition-colors duration-200">
               Subscribe
             </button>
           </div>
