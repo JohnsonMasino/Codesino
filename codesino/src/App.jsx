@@ -6,6 +6,9 @@ import Blog from "./pages/Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import CookieConsent from "./components/CookieConsent";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import CookiePolicy from "./components/CookiePolicy";
+import TermsConditions from "./components/TermsConditions";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <CookieConsent />
