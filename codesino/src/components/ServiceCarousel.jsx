@@ -45,23 +45,20 @@ const ImageWithText = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 4000); // Change slide every 5 seconds
+        }, 4000);
 
         return () => clearInterval(interval);
     }, [slides.length]);
 
     return (
-        <div className="flex flex-col items-center p-6 space-y-6">
-            <div className="text-center mt-6">
-                <h3 className="text-1xl font-bold mt-4 text-gray-600">Takea Quick Glimpse Of Our Services</h3>
-            </div>
+        <div className="service-carousel-wrapper">
+            <h3 className="service-carousel-title">Take a Quick Glimpse Of Our Services</h3>
             <motion.div
                 key={currentIndex}
-                className="bg-blue-400 shadow-lg rounded-lg overflow-hidden max-w-4xl w-full 
-                           flex flex-col md:flex-row" // Stack on mobile, row on larger screens
-                initial={{ opacity: 0, x: 100 }} // Slide in from the right
-                animate={{ opacity: 1, x: 0 }}  
-                exit={{ opacity: 0, x: -100 }}  
+                className="service-carousel-card"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
             >
                 {/* Image Section */}
@@ -69,18 +66,14 @@ const ImageWithText = () => {
                     <img 
                         src={slides[currentIndex].image} 
                         alt={slides[currentIndex].title} 
-                        className="w-full h-auto object-cover"
+                        className="service-carousel-image"
                     />
                 </div>
 
-                {/* Text Content */}
-                <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
-                    <h2 className="text-2xl font-bold text-gray-200 text-center md:text-left">
-                        {slides[currentIndex].title}
-                    </h2>
-                    <p className="text-gray-300 mt-3 text-lg text-center md:text-left">
-                        {slides[currentIndex].description}
-                    </p>
+                {/* Text Section */}
+                <div className="service-carousel-text w-full md:w-1/2">
+                    <h2 className="service-carousel-title-text">{slides[currentIndex].title}</h2>
+                    <p className="service-carousel-description">{slides[currentIndex].description}</p>
                 </div>
             </motion.div>
         </div>

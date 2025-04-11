@@ -38,10 +38,12 @@ const CallToAction = () => {
         </div>
       )}
 
-      <h2 className="cta-title">Ready to Get Started?</h2>
-      <button className="cta-btn" onClick={toggleModal}>
-        Send a Request
-      </button>
+      <div className="cta-card" onClick={toggleModal}>
+        <h2 className="cta-title">Ready to Get Started?</h2>
+        <button className="cta-btn">
+          Send a Request
+        </button>
+      </div>
 
       {/* Modal Form */}
       {isOpen && (
@@ -78,3 +80,4 @@ const CallToAction = () => {
 };
 
 export default CallToAction;
+

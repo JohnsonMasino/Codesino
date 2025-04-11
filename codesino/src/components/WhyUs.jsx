@@ -78,7 +78,7 @@ const ImageWithText = () => {
 
                         {/* Text Section */}
                         <div className="whyus-text-wrapper">
-                            <h3 className="whyus-heading">{item.heading}</h3>
+                            <h3 className="whyus-heading text-gray-800">{item.heading}</h3>
                             <p className="whyus-text">{item.text}</p>
                         </div>
                     </motion.div>

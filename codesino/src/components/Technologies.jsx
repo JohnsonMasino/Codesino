@@ -1,10 +1,11 @@
 import React from "react";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const technologies = [
   {
-    category: "Website | Web App Development",
+    category: "Mobile | Web App Development",
     tools: [
       { name: "React", logo: "react.png" },
       { name: "Next.js", logo: "next.png" },
@@ -20,6 +21,9 @@ const technologies = [
       { name: "npm", logo: "npm.png" },
       { name: "git", logo: "git.png" },
       { name: "mailgun", logo: "mailgun.png" },
+      { name: "Kotlin", logo: "kotlin.png" },
+      { name: "Swift", logo: "swift.png" },
+      { name: "Flutter", logo: "flutter.png" },
       { name: "React", logo: "react.png" },
       { name: "Next.js", logo: "next.png" },
       { name: "Vue.js", logo: "vue.png" },
@@ -34,29 +38,9 @@ const technologies = [
       { name: "npm", logo: "npm.png" },
       { name: "git", logo: "git.png" },
       { name: "mailgun", logo: "mailgun.png" },
-    ],
-  },
-  {
-    category: "Mobile App Development",
-    tools: [
-      { name: "React", logo: "react.png" },
-      { name: "Flutter", logo: "flutter.png" },
-      { name: "Swift", logo: "swift.png" },
       { name: "Kotlin", logo: "kotlin.png" },
-      { name: "Github", logo: "github.png" },
-      { name: "git", logo: "git.png" },
-      { name: "React", logo: "react.png" },
-      { name: "Flutter", logo: "flutter.png" },
       { name: "Swift", logo: "swift.png" },
-      { name: "Kotlin", logo: "kotlin.png" },
-      { name: "Github", logo: "github.png" },
-      { name: "git", logo: "git.png" },
-      { name: "React", logo: "react.png" },
       { name: "Flutter", logo: "flutter.png" },
-      { name: "Swift", logo: "swift.png" },
-      { name: "Kotlin", logo: "kotlin.png" },
-      { name: "Github", logo: "github.png" },
-      { name: "git", logo: "git.png" },
     ],
   },
   {
@@ -228,59 +212,42 @@ const technologies = [
   },
 ];
 
-const Testimonial = () => {
+const TechnologyCarousel = () => {
+  const settings = {
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    arrows: false,
+  };
+
   return (
-    
-    <div className="bg-blue-300 text-white py-2 px-8">
+    <div className="carousel-container">
+      <div>
+        <h2 className="category">Technologies We Use</h2>
+      </div>
       {technologies.map((tech, index) => (
-        <div key={index} className="overflow-hidden">
-          <h2 className="text-center text-sm font-bold mt-12 text-gray-600">
-            {tech.category}
-          </h2>
-          <div className="tech-slider mt-6">
-            <div className="slider-track">
-              {tech.tools.concat(tech.tools).map((tool, idx) => (
+        <div className="carousel-section" key={index}>
+          <h3 className="category">{tech.category}</h3>
+          <Slider {...settings}>
+            {tech.tools.map((tool, i) => (
+              <div className="tool-slide" key={i}>
                 <img
-                  key={idx}
-                  src={tool.logo}
+                  src={`/${tool.logo}`}
                   alt={tool.name}
-                  className="h-16 object-contain mx-4"
+                  className="tool-logo"
                 />
-              ))}
-            </div>
-          </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       ))}
-
-      <style>
-        {`
-          @keyframes slide {
-            from {
-              transform: translateX(0%);
-            }
-            to {
-              transform: translateX(-50%);
-            }
-          }
-
-          .tech-slider {
-            display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            width: 100%;
-          }
-
-          .slider-track {
-            display: flex;
-            gap: 20px;
-            animation: slide 20s linear infinite;
-            width: 200%; /* Ensures seamless loop */
-          }
-        `}
-      </style>
     </div>
   );
 };
 
-export default Testimonial;
+export default TechnologyCarousel;
+
