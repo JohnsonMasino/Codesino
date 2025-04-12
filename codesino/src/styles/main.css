@@ -1210,3 +1210,186 @@ html, body {
   border-radius: 10px;
   z-index: 10000;
 }
+
+
+
+/* Services */
+/* Services */
+
+.services-page {
+  background: linear-gradient(
+    to right,
+    #4d066e 0%,
+    #2a003e 45%,
+    #1a0026 60%,
+    #100018 100%
+  );
+  color: #f3f4f6;
+  padding: 60px 10%;
+}
+
+/* Section Styling */
+.service-section {
+  margin-bottom: 80px;
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Animate on scroll */
+.service-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image Styles */
+.image-container {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  border-radius: 16px;
+}
+
+/* Title on image */
+.service-title {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(42, 0, 62, 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* Description and Button */
+.service-content {
+  padding: 30px 10px 0;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #d1d5db;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.service-content p {
+  margin-bottom: 20px;
+}
+
+.request-btn {
+  background-color: #ffffff;
+  color: #2a003e;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.request-btn:hover {
+  background-color: #ff69b4;
+  color: #ffffff;
+}
+
+/* Scroll Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-image {
+    height: 250px;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    left: 20px;
+    bottom: 16px;
+  }
+
+  .service-content {
+    font-size: 1rem;
+  }
+}
+
+
+/* External CSS for Pi */
+.pi-banner {
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px; /* Optional: to ensure no gap at the start */
+  background: transparent; /* Set to transparent to blend with current background */
+}
+
+.pi-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.pi-scroll {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+}
+
+.pi-logo {
+  height: 30px;
+  margin-right: 20px;
+}
+
+/* Duplicate content within pi-scroll */
+.pi-scroll::after {
+  content: attr(data-content);
+  margin-left: 10px; /* Optional: to ensure space between the two sets */
+}
+
+/* Animate from right to left */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+
+
+
