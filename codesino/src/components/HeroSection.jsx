@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Mail, User, MessageCircle } from "lucide-react";
 
 const slides = [
   {
@@ -47,7 +48,12 @@ const slides = [
 ];
 
 const HeroWithSlider = () => {
+  // For slider
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // For call-to-action modal form
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -57,41 +63,108 @@ const HeroWithSlider = () => {
     return () => clearInterval(slideInterval);
   }, []);
 
-  return (
-    <section className="hero-image">
-      <div className="hero-left">
-        <h1 className="hero-headline">We Build. We Design. We Deliver.</h1>
-        <p className="hero-subtext">
-          Codesino is your all-in-one software powerhouse—delivering stunning websites, cutting-edge mobile apps,
-          immersive graphics, and secure global exchanges. Join us to shape the future with tech.
-        </p>
-        <a href="/services" className="hero-btn">
-          Explore Services
-        </a>
-      </div>
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
-      <div className="hero-right hero-slider-wrapper">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            className="hero-slide"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          >
-            <img
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].title}
-              className="hero-img"
-            />
-            <div className="slide-text">
-              <h3 className="slide-title">{slides[currentIndex].title}</h3>
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+    setSuccessMessage("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate sending message
+    setTimeout(() => {
+      setSuccessMessage("Your message has been sent successfully!");
+      setIsModalOpen(false);
+    }, 1000);
+  };
+
+  return (
+    <>
+      <section className="hero-image">
+        <div className="hero-left">
+          <h1 className="hero-headline">We Build. We Design. We Deliver.</h1>
+          <p className="hero-subtext">
+            Codesino is your all-in-one software powerhouse—delivering stunning
+            websites, cutting-edge mobile apps, immersive graphics, and secure global
+            exchanges. Join us to shape the future with tech.
+          </p>
+          <div className="button-group">
+            <a href="/services" className="hero-btn">
+              Explore Services
+            </a>
+            <button className="hero-btn secondary" onClick={toggleModal}>
+              Send a Request
+            </button>
+          </div>
+        </div>
+
+        <div className="hero-right hero-slider-wrapper">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              className="hero-slide"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <img
+                src={slides[currentIndex].image}
+                alt={slides[currentIndex].title}
+                className="hero-img"
+              />
+              <div className="slide-text">
+                <h3 className="slide-title">{slides[currentIndex].title}</h3>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Global Success Message */}
+      {successMessage && (
+        <div className="global-success-message">{successMessage}</div>
+      )}
+
+      {/* Modal Form */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="contact-container">
+            <div className="contact-form">
+              <h2 className="contact-title">Schedule a Proposal</h2>
+              <form className="contact-form-body" onSubmit={handleSubmit}>
+                <div className="input-group">
+                  <User className="input-icon" size={24} />
+                  <input type="text" placeholder="Your Name" required />
+                </div>
+                <div className="input-group">
+                  <Mail className="input-icon" size={24} />
+                  <input type="email" placeholder="Your Email" required />
+                </div>
+                <div className="input-group textarea-group">
+                  <MessageCircle className="input-icon" size={24} />
+                  <textarea placeholder="What do you need?" required></textarea>
+                </div>
+                <button type="submit" className="submit-btn">
+                  Send Message
+                </button>
+              </form>
+              <button className="close-modal-btn" onClick={toggleModal}>
+                ✖
+              </button>
             </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </section>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

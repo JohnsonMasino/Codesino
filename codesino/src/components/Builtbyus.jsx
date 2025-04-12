@@ -26,7 +26,7 @@ const testimonials = [
   },
 ];
 
-const logos = ["lootcrate.png", "lootcrate.png"];
+const logos = ["lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png"];
 
 const Testimonial = () => {
   const settings = {
@@ -72,7 +72,6 @@ const Testimonial = () => {
     <div className="testimonial-section">
       <div className="testimonial-header">
         <h2>Our works speak for us</h2>
-        <h2>TESTIMONIALS</h2>
       </div>
 
       <Slider {...settings}>
