@@ -62,7 +62,8 @@ function ResponsiveAppBar() {
             <Typography
               variant="h4"
               sx={{
-                fontWeight: 700,
+                display: { xs: 'none', sm: 'block' },
+                fontWeight: 900,
                 background: 'linear-gradient(to right, pink, white, red)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',

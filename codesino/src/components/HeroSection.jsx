@@ -137,7 +137,7 @@ const HeroWithSlider = () => {
       {/* Modal Form */}
       {isModalOpen && (
         <div className="modal-overlay">
-          <div className="contact-container">
+          <div className="contact-container w-full max-w-md mx-auto px-4">
             <div className="contact-form">
               <h2 className="contact-title">Schedule a Proposal</h2>
               <form className="contact-form-body" onSubmit={handleSubmit}>
