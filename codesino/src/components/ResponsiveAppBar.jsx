@@ -62,13 +62,16 @@ function ResponsiveAppBar() {
             <Typography
               variant="h4"
               sx={{
-                fontWeight: 700,
-                color: 'white',
+                display: { xs: 'none', sm: 'block' },
+                fontWeight: 900,
+                background: 'linear-gradient(to right, pink, white, red)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
                 textTransform: 'none',
                 letterSpacing: '0.1rem'
               }}
             >
-              codesino
+              Codesino
             </Typography>
           </Box>
 

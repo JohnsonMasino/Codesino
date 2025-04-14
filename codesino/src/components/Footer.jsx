@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import SubscriptionForm from './SubscriptionForm';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,22 +8,27 @@ const socials = [
   {
     id: 1,
     icon: <Facebook />,
-    link: 'https://www.facebook.com',
+    link: 'https://www.facebook.com/johnsonmasino',
   },
   {
     id: 2,
     icon: <Twitter />,
-    link: 'https://www.twitter.com',
+    link: 'https://www.twitter.com/codesinodev',
   },
   {
     id: 3,
     icon: <Instagram />,
-    link: 'https://www.instagram.com',
+    link: 'https://www.instagram.com/codesinodev',
   },
   {
     id: 4,
     icon: <Linkedin />,
-    link: 'https://www.linkedin.com',
+    link: 'https://www.linkedin.com/company/codesinodev',
+  },
+  {
+    id: 5,
+    icon: <FaWhatsapp />,
+    link: `https://wa.me/2349036206457?text=Hi%20I'm%20reaching%20you%20from%20your%20website.%20I%20want%20to%20discuss%20your%20(_______)%20service`, // ✅ Encoded message
   },
 ];
 
@@ -73,7 +79,13 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-3 text-gradient">Follow Us</h3>
           <div className="flex space-x-4">
             {socials.map((social) => (
-              <a key={social.id} href={social.link} className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+              <a
+                key={social.id}
+                href={social.link}
+                className="text-gray-400 hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {social.icon}
               </a>
             ))}
@@ -90,3 +102,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
