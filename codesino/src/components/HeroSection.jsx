@@ -48,42 +48,59 @@ const slides = [
 ];
 
 const HeroWithSlider = () => {
-  // For slider
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // For call-to-action modal form
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(slideInterval);
   }, []);
 
   useEffect(() => {
-    if (successMessage) {
+    if (successMessage || errorMessage) {
       const timer = setTimeout(() => {
         setSuccessMessage("");
+        setErrorMessage("");
       }, 3000);
       return () => clearTimeout(timer);
     }
-  }, [successMessage]);
+  }, [successMessage, errorMessage]);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
     setSuccessMessage("");
+    setErrorMessage("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate sending message
-    setTimeout(() => {
-      setSuccessMessage("Your message has been sent successfully!");
-      setIsModalOpen(false);
-    }, 1000);
+    const form = e.target;
+    const name = form[0].value;
+    const email = form[1].value;
+    const message = form[2].value;
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/contacts/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Your message has been sent successfully!");
+        setIsModalOpen(false);
+      } else {
+        throw new Error("Failed to send message.");
+      }
+    } catch (error) {
+      setErrorMessage("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -132,6 +149,11 @@ const HeroWithSlider = () => {
       {/* Global Success Message */}
       {successMessage && (
         <div className="global-success-message">{successMessage}</div>
+      )}
+
+      {/* Global Error Message */}
+      {errorMessage && (
+        <div className="global-error-message">{errorMessage}</div>
       )}
 
       {/* Modal Form */}

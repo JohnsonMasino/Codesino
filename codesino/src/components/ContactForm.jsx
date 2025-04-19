@@ -3,20 +3,38 @@ import { Mail, User, MessageCircle } from 'lucide-react';
 
 const ContactForm = () => {
   const [successMessage, setSuccessMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Show success message
-    setSuccessMessage(true);
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
 
-    // Hide success message after 3 seconds
-    setTimeout(() => {
-      setSuccessMessage(false);
-    }, 3000);
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/contacts/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Optionally reset form fields here
-    e.target.reset();
+      if (response.ok) {
+        setSuccessMessage(true);
+        e.target.reset();
+        setTimeout(() => setSuccessMessage(false), 3000);
+      } else {
+        setErrorMessage(true);
+        setTimeout(() => setErrorMessage(false), 3000);
+      }
+    } catch (error) {
+      setErrorMessage(true);
+      setTimeout(() => setErrorMessage(false), 3000);
+    }
   };
 
   return (
@@ -26,27 +44,34 @@ const ContactForm = () => {
           Message sent successfully!
         </div>
       )}
+      {errorMessage && (
+        <div className="global-error-message">
+          Oops! Something went wrong. Please try again.
+        </div>
+      )}
+
       <div className='heading-container'>
         <h1 className='heading'>We're Ready To Engage</h1>
         <p className='description'>Have a project in mind, a proposal,
           or a partnership idea? Reach out to us to discuss how Codesino
           can bring your vision to life through innovative tech solutions.</p>
       </div>
+
       <div className="contact-container w-full max-w-md mx-auto px-4">
         <div className="contact-form">
           <h2 className="contact-title">Contact Us</h2>
           <form className="contact-form-body" onSubmit={handleSubmit}>
             <div className="input-group">
               <User className="input-icon" size={24} />
-              <input type="text" placeholder="Your Name" required />
+              <input type="text" name="name" placeholder="Your Name" required />
             </div>
             <div className="input-group">
               <Mail className="input-icon" size={24} />
-              <input type="email" placeholder="Your Email" required />
+              <input type="email" name="email" placeholder="Your Email" required />
             </div>
             <div className="input-group textarea-group">
               <MessageCircle className="input-icon" size={24} />
-              <textarea placeholder="Your Message" required></textarea>
+              <textarea name="message" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" className="submit-btn">Send Message</button>
 

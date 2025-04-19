@@ -65,6 +65,7 @@ const ServiceContainer = () => {
   const [currentService, setCurrentService] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleRequestClick = (serviceTitle) => {
     setCurrentService(serviceTitle);
@@ -76,18 +77,44 @@ const ServiceContainer = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowForm(false);
-    setSuccessMessage("Request submitted successfully!");
-    setFormData({ name: "", email: "", message: "" });
+    setErrorMessage("");
+    setSuccessMessage("");
 
-    setTimeout(() => setSuccessMessage(""), 4000); // Clear after 4s
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/services/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          service: currentService,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Something went wrong.");
+      }
+
+      setSuccessMessage("Request submitted successfully!");
+      setFormData({ name: "", email: "", message: "" });
+      setShowForm(false);
+      setTimeout(() => setSuccessMessage(""), 4000);
+    } catch (err) {
+      setErrorMessage(err.message || "Failed to submit request.");
+      setTimeout(() => setErrorMessage(""), 4000);
+    }
   };
 
   return (
     <div className="services-page">
       {successMessage && <div className="global-success-message">{successMessage}</div>}
+      {errorMessage && <div className="global-error-message">{errorMessage}</div>}
 
       {services.map((service, index) => (
         <ServiceSection
@@ -119,7 +146,7 @@ const ServiceContainer = () => {
             />
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder="Request Prompt (Ex: I need this for my business)"
               value={formData.message}
               onChange={handleChange}
               rows="5"
@@ -146,4 +173,3 @@ const ServiceContainer = () => {
 };
 
 export default ServiceContainer;
-
