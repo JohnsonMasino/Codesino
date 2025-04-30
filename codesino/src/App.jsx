@@ -10,6 +10,8 @@ import CookieConsent from "./components/CookieConsent";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import CookiePolicy from "./components/CookiePolicy";
 import TermsConditions from "./components/TermsConditions";
+import SingleBlog from './pages/SinglePost';
+import CreateBlogPost from './pages/CreateBlogPost';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/create-post" element={<CreateBlogPost />} />
+        <Route path="/blog/:id" element={<SingleBlog />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
