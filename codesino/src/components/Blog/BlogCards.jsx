@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const BlogCards = ({ blogs }) => {
   useEffect(() => {
@@ -35,9 +36,9 @@ const BlogCards = ({ blogs }) => {
                 {card.description}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                <a href={card.postLink} className="continue-reading">
+                <Link to={card.postLink} className="continue-reading">
                   Continue Reading .......
-                </a>
+                </Link>
               </Typography>
             </CardContent>
           </Card>

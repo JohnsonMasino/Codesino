@@ -6,5 +6,6 @@ urlpatterns = [
     path('api/', include('contact.urls')),
     path('api/', include('service.urls')),
     path('api/', include('newsletter.urls')),
+    path('blog/', include('blog.urls')),
 ]
 
