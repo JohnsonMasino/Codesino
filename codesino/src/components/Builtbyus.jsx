@@ -26,7 +26,7 @@ const testimonials = [
   },
 ];
 
-const logos = ["lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png"];
+const logos = ["lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png"];
 
 const Testimonial = () => {
   const settings = {
