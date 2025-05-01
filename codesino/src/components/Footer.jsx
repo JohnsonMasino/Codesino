@@ -48,9 +48,9 @@ const Footer = () => {
         {/* Contact Us */}
         <div className="footer-contact">
           <h3 className="text-lg font-semibold mb-3 text-gradient">Contact Us</h3>
-          <p className="text-start text-gray-400">Email: contact@example.com</p>
-          <p className="text-start text-gray-400">Phone: +123 456 7890</p>
-          <p className="text-start text-gray-400">Address: 123 Street, City, Country</p>
+          <p className="text-start text-gray-400">Email: contact@codesinodev.com</p>
+          <p className="text-start text-gray-400">Phone: +234 903 620 6457</p>
+          <p className="text-start text-gray-400">Address: G.R.A Enugu, Nigeria.</p>
         </div>
 
         {/* Quick Links */}
@@ -60,6 +60,7 @@ const Footer = () => {
             <li><a onClick={() => handleNavigation('/')} className="hover:text-white cursor-pointer">Home</a></li>
             <li><a onClick={() => handleNavigation('/about')} className="hover:text-white cursor-pointer">About</a></li>
             <li><a onClick={() => handleNavigation('/services')} className="hover:text-white cursor-pointer">Services</a></li>
+            <li><a onClick={() => handleNavigation('/blog')} className="hover:text-white cursor-pointer">Blog</a></li>
             <li><a onClick={() => handleNavigation('/contact')} className="hover:text-white cursor-pointer">Contact</a></li>
           </ul>
         </div>

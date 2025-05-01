@@ -4,7 +4,7 @@ import BlogPagination from './BlogPagination';
 
 const BlogContainer = () => {
   const postsPerPage = 9;
-  const totalDisplayPosts = 25; // number of posts to display overall
+  const totalDisplayPosts = 25;
 
   const [realPosts, setRealPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,7 +17,7 @@ const BlogContainer = () => {
           const data = await response.json();
           const processedPosts = data.map(post => ({
             ...post,
-            postLink: `/blog/${post.id}`, // Ensure postLink exists for real posts
+            postLink: `/blog/${post.id}`, 
             isDummy: false,
           }));
           setRealPosts(processedPosts);
@@ -30,7 +30,6 @@ const BlogContainer = () => {
     fetchRealPosts();
   }, []);
 
-  // Generate dummy posts to fill in the gaps
   const generateDummyPosts = (startId, count) => {
     return Array.from({ length: count }).map((_, index) => ({
       id: startId + index,

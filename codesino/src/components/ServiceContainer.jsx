@@ -72,7 +72,7 @@ const ServiceContainer = () => {
     setShowForm(true);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { 
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -146,7 +146,7 @@ const ServiceContainer = () => {
             />
             <textarea
               name="message"
-              placeholder="Request Prompt (Ex: I need this for my business)"
+              placeholder="Request Prompt (Ex: I need this service for my business)"
               value={formData.message}
               onChange={handleChange}
               rows="5"
