@@ -87,7 +87,7 @@ const ContactForm = () => {
 
             {/* Email alternative */}
             <p className="email-alt-text">
-              Or email us at <a href="mailto:info@codesinodev.com">info@codesinodev.com</a>
+              Or email us at <a href="mailto:contact@codesinodev.com">contact@codesinodev.com</a>
             </p>
           </form>
         </div>
