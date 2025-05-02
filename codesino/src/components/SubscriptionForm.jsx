@@ -40,35 +40,32 @@ const SubscriptionForm = () => {
   return (
     <div className="footer-newsletter py-8 px-4 md:px-6 max-w-7xl mx-auto text-white">
       <div className="flex justify-start">
-        <div className="text-start max-w-lg w-full">
+        <div className="text-start w-full max-w-lg">
           <h3 className="text-2xl font-semibold mb-3">Subscribe to our Newsletter</h3>
           <p className="text-gray-400 mb-4">Stay updated with our latest news and offers.</p>
           <form onSubmit={handleSubscribe}>
-            <div className="flex items-center rounded-lg overflow-hidden max-w-md w-full shadow-sm">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center rounded-lg overflow-hidden w-full shadow-sm space-y-2 sm:space-y-0 sm:space-x-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-grow px-4 py-3 outline-none text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 outline-none text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 rounded-md sm:rounded-none sm:rounded-l-md"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-[#2A003E] text-white px-6 py-3 transition-colors duration-200"
+                className="w-full sm:w-auto bg-blue-600 hover:bg-[#2A003E] text-white px-6 py-3 transition-colors duration-200 rounded-md sm:rounded-none sm:rounded-r-md"
               >
                 Subscribe
               </button>
             </div>
           </form>
 
-          {/* Success Message */}
           {successMessage && (
-            <p className="global-success-message mt-4">{successMessage}</p>
+            <p className="global-success-message mt-4 text-green-400">{successMessage}</p>
           )}
-
-          {/* Error Message */}
           {errorMessage && (
-            <p className="global-error-message mt-4">{errorMessage}</p>
+            <p className="global-error-message mt-4 text-red-400">{errorMessage}</p>
           )}
         </div>
       </div>

@@ -26,7 +26,16 @@ const testimonials = [
   },
 ];
 
-const logos = ["lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png", "lootcrate.png"];
+const logos = [
+  "lootcrate.png",
+  "lootcrate.png",
+  "lootcrate.png",
+  "lootcrate.png",
+  "lootcrate.png",
+  "lootcrate.png",
+  "lootcrate.png",
+  "lootcrate.png",
+];
 
 const Testimonial = () => {
   const settings = {
@@ -90,7 +99,7 @@ const Testimonial = () => {
 
       <div className="logo-marquee">
         <div className="logo-track" ref={truckImageRef}>
-          {logos.map((logo, index) => (
+          {[...logos, ...logos].map((logo, index) => (
             <img key={index} src={logo} alt={`Logo ${index + 1}`} />
           ))}
         </div>
