@@ -7,43 +7,37 @@ const slides = [
     title: "Website | Web App Development",
     image: "/webapp.webp",
     description:
-      "This breathtaking landscape captures the essence of nature's beauty. A perfect escape into tranquility and peace.",
+      "This breathtaking landscape captures the essence of nature's beauty.",
   },
   {
     title: "Mobile App Development",
     image: "/mobile1.png",
-    description:
-      "Experience the architectural beauty and the blend of history with modern elegance.",
+    description: "Experience the architectural beauty with modern elegance.",
   },
   {
     title: "Cloud Services",
     image: "/cloud.webp",
-    description:
-      "Explore vibrant cityscapes filled with energy, innovation, and cultural diversity.",
+    description: "Explore cityscapes filled with energy and innovation.",
   },
   {
     title: "Product | Graphics Design",
     image: "/product.avif",
-    description:
-      "Explore vibrant cityscapes filled with energy, innovation, and cultural diversity.",
+    description: "Crafting creative and compelling product designs.",
   },
   {
     title: "Motion Graphics | 3D Animation",
     image: "/3d.gif",
-    description:
-      "Explore vibrant cityscapes filled with energy, innovation, and cultural diversity.",
+    description: "Immersive visual storytelling with motion graphics.",
   },
   {
     title: "Software Development Training",
     image: "/training.png",
-    description:
-      "Explore vibrant cityscapes filled with energy, innovation, and cultural diversity.",
+    description: "Learn hands-on software engineering skills with us.",
   },
   {
     title: "Crypto | Paypal | Fiat Exchange",
     image: "/crypto.avif",
-    description:
-      "Explore vibrant cityscapes filled with energy, innovation, and cultural diversity.",
+    description: "Secure and fast currency exchange services.",
   },
 ];
 
@@ -110,8 +104,8 @@ const HeroWithSlider = () => {
           <h1 className="hero-headline">We Build. We Design. We Deliver.</h1>
           <p className="hero-subtext">
             Codesino is your all-in-one software powerhouse—delivering stunning
-            websites, cutting-edge mobile apps, immersive graphics, and secure global
-            exchanges. Join us to shape the future with tech.
+            websites, cutting-edge mobile apps, immersive graphics, and secure
+            global exchanges. Join us to shape the future with tech.
           </p>
           <div className="button-group">
             <a href="/services" className="hero-btn">
@@ -124,7 +118,7 @@ const HeroWithSlider = () => {
         </div>
 
         <div className="hero-right hero-slider-wrapper">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentIndex}
               className="hero-slide"
@@ -146,17 +140,13 @@ const HeroWithSlider = () => {
         </div>
       </section>
 
-      {/* Global Success Message */}
       {successMessage && (
         <div className="global-success-message">{successMessage}</div>
       )}
-
-      {/* Global Error Message */}
       {errorMessage && (
         <div className="global-error-message">{errorMessage}</div>
       )}
 
-      {/* Modal Form */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="contact-container w-full max-w-md mx-auto px-4">
