@@ -8,7 +8,7 @@ const socials = [
   {
     id: 1,
     icon: <Facebook />,
-    link: 'https://www.facebook.com/johnsonmasino',
+    link: 'https://www.facebook.com/codesinodev',
   },
   {
     id: 2,

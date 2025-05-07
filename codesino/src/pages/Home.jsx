@@ -4,11 +4,8 @@ import ResponsiveAppBar from '../components/ResponsiveAppBar';
 import Footer from '../components/Footer';
 import HeroTextOnly from '../components/HeroSection';
 import ImageWithText from '../components/WhyUs';
-import Ourmission from '../components/OurMission';
-import Service from '../components/ServiceCarousel';
-import BuiltByUs from '../components/Builtbyus';
-import Expertise from '../components/Expertise';
-import Technologies from '../components/Technologies';
+import AboutInfo from '../components/AboutInfo';
+
 
 
 const Home = () => {
@@ -17,12 +14,8 @@ const Home = () => {
         
         <ResponsiveAppBar/>
         <HeroTextOnly/>
+        <AboutInfo />
         <ImageWithText/>
-        <Ourmission/>
-        <Service />
-        <BuiltByUs/>
-        <Expertise/>
-        <Technologies/>
         <Footer />
     
     

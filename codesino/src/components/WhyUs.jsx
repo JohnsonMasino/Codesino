@@ -1,6 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ImageWithText = () => {
     const slides = [
@@ -46,46 +45,59 @@ const ImageWithText = () => {
         },
     ];
 
+    const [current, setCurrent] = useState(0);
+
+    const nextSlide = () => {
+        setCurrent((prev) => (prev + 1) % slides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    };
+
     return (
         <div className="whyus-container">
             <h3 className="whyus-title">Why Choose Us?</h3>
-
             <p className="whyus-description">
-                At Codesino Dev, we are passionate about crafting innovative digital solutions that drive business success. As a software
-                development company, we specialize in building scalable web applications, mobile solutions, and AI-powered technologies tailored to modern business needs.
-                Our team of expert developers, designers, and tech strategists are dedicated to delivering high-performance, user-friendly, and future-proof software.
-                Beyond development, we empower the next generation of tech professionals through cutting-edge training programs, bridging the gap between learning and
-                real-world application. With a client-centric approach and a commitment to excellence, Codesino Dev is your trusted partner in technology, innovation,
-                and digital transformation. Know more about our strengths below.
+            At Codesino Dev, we build digital solutions that drive real results.
+            From web and mobile apps to AI-powered systems and payment
+            integrations, our tech accelerates your business growth. We don’t
+            just develop software—we deliver impact. Know more about our strengths
+            below.
             </p>
 
-            {slides.map((item, index) => {
-                const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+            <div className="carousel-container-why">
+                <button className="carousel-arrow left" onClick={prevSlide}>
+                    &#8592;
+                </button>
 
-                return (
+                <AnimatePresence mode="wait">
                     <motion.div
-                        key={index}
-                        ref={ref}
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={inView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
+                        key={current}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.5 }}
                         className="whyus-slide"
                     >
-                        {/* Image Section */}
                         <div className="whyus-image-wrapper">
-                            <img src={item.image} alt={item.heading} className="whyus-image" />
+                            <img src={slides[current].image} alt={slides[current].heading} className="whyus-image" />
                         </div>
 
-                        {/* Text Section */}
                         <div className="whyus-text-wrapper">
-                            <h3 className="whyus-heading text-gray-800">{item.heading}</h3>
-                            <p className="whyus-text">{item.text}</p>
+                            <h3 className="whyus-heading">{slides[current].heading}</h3>
+                            <p className="whyus-text">{slides[current].text}</p>
                         </div>
                     </motion.div>
-                );
-            })}
+                </AnimatePresence>
+
+                <button className="carousel-arrow right" onClick={nextSlide}>
+                    &#8594;
+                </button>
+            </div>
         </div>
     );
 };
 
 export default ImageWithText;
+
