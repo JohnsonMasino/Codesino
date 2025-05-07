@@ -1,3 +1,15 @@
+// const logos = [
+//   "lootcrate.png",
+//   "lootcrate.png",
+//   "lootcrate.png",
+//   "lootcrate.png",
+//   "lootcrate.png",
+//   "lootcrate.png",
+//   "lootcrate.png",
+//   "lootcrate.png",
+// ];
+
+
 import React, { useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -24,22 +36,23 @@ const testimonials = [
     name: "Nwanafio Lotanna",
     designation: "Tad Tech Founder",
   },
-];
-
-const logos = [
-  "lootcrate.png",
-  "lootcrate.png",
-  "lootcrate.png",
-  "lootcrate.png",
-  "lootcrate.png",
-  "lootcrate.png",
-  "lootcrate.png",
-  "lootcrate.png",
+  {
+    image: "testi1.jpeg",
+  },
+  {
+    image: "testi2.jpeg",
+  },
+  {
+    image: "testi3.jpeg",
+  },
+  {
+    image: "testi4.jpeg",
+  },
 ];
 
 const Testimonial = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -80,21 +93,31 @@ const Testimonial = () => {
   return (
     <div className="testimonial-section">
       <div className="testimonial-header">
-        <h2>Our works speak for us</h2>
+        <h2 className="our-work">Our works speak for us</h2>
       </div>
 
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <div key={index} className="testimonial-card">
-            <p className="testimonial-quote">"{testimonial.quote}"</p>
-            <h4 className="testimonial-name">{testimonial.name}</h4>
-            <p className="testimonial-role">{testimonial.designation}</p>
+            {testimonial.image ? (
+              <img
+                src={testimonial.image}
+                alt={`Testimonial Image ${index + 1}`}
+                className="testimonial-image"
+              />
+            ) : (
+              <>
+                <p className="testimonial-quote">"{testimonial.quote}"</p>
+                <h4 className="testimonial-name">{testimonial.name}</h4>
+                <p className="testimonial-role">{testimonial.designation}</p>
+              </>
+            )}
           </div>
         ))}
       </Slider>
 
-      <div className="company-section">
-        <h2>Some Companies we Built Their Webapps</h2>
+      {/* <div className="company-section">
+        <h2>Some Of Our Works</h2>
       </div>
 
       <div className="logo-marquee">
@@ -103,7 +126,7 @@ const Testimonial = () => {
             <img key={index} src={logo} alt={`Logo ${index + 1}`} />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

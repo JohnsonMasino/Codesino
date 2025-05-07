@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const OurMission = () => {
     const strengths = [
@@ -64,25 +65,57 @@ const OurMission = () => {
         }
     ];
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % strengths.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? strengths.length - 1 : prevIndex - 1
+        );
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            handleNext();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
-        <div className="ourmission-container">
+        <section className="ourmission-carousel-wrapper">
             <h3 className="ourmission-title">Our Mission</h3>
 
-            <div className="ourmission-grid">
-                {strengths.map((strength, index) => (
-                    <div key={index} className="ourmission-card">
+            <div className="carousel-slide-container">
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={currentIndex}
+                        className="ourmission-card slide-card"
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                    >
                         <img
-                            src={strength.image}
-                            alt={strength.title}
+                            src={strengths[currentIndex].image}
+                            alt={strengths[currentIndex].title}
                             className="ourmission-image"
                         />
-                        <h4 className="ourmission-heading">{strength.title}</h4>
-                        <p className="ourmission-description">{strength.description}</p>
-                    </div>
-                ))}
+                        <h4 className="ourmission-heading">{strengths[currentIndex].title}</h4>
+                        <p className="ourmission-description">{strengths[currentIndex].description}</p>
+                    </motion.div>
+                </AnimatePresence>
+
+                <div className="ourmission-buttons">
+                    <button onClick={handlePrev} className="ourmission-nav-btn">Previous</button>
+                    <button onClick={handleNext} className="ourmission-nav-btn">Next</button>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
 export default OurMission;
+
