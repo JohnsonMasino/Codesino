@@ -16,7 +16,7 @@ const SubscriptionForm = () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/subscribe/', {
+      const response = await fetch('https://codesino.onrender.com/api/subscribe/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
