@@ -13,7 +13,7 @@ const CookiePolicy = () => {
       </button>
       <h1 className="text-3xl font-bold mb-4 text-red-700">Cookie Policy</h1>
 
-      <p className="text-sm text-gray-500 mb-4">Last updated: April 11, 2025</p>
+      <p className="text-sm text-gray-500 mb-4">Last updated: May 8, 2025</p>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">1. What Are Cookies?</h2>
@@ -75,10 +75,10 @@ const CookiePolicy = () => {
           <br />
           <strong>Email:</strong>{' '}
           <a
-            href="mailto:info@codesino.com"
+            href="mailto:support@codesinodev.com"
             className="underline hover:text-white"
           >
-            info@codesino.com
+            support@codesinodev.com
           </a>
         </p>
       </section>

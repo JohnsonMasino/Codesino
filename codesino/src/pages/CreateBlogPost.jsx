@@ -11,7 +11,7 @@ const CreateBlogPost = () => {
     e.preventDefault();
 
     const newPost = { title, image, content };
-    const response = await fetch('http://localhost:8000/blog/api/posts/', {
+    const response = await fetch('https://codesino.onrender.com/blog/api/posts/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
