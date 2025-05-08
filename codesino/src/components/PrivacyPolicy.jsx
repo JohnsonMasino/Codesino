@@ -12,12 +12,12 @@ const PrivacyPolicy = () => {
       </button>
       <h1 className="text-3xl font-bold mb-4 text-red-700">Privacy Policy</h1>
 
-      <p className="mb-4 text-sm text-gray-500">Last updated: April 11, 2025</p>
+      <p className="mb-4 text-sm text-gray-500">Last updated: May 8, 2025</p>
 
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">1. Introduction</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. We are committed to protecting your
+          We are committed to protecting your
           personal information and your right to privacy.
         </p>
       </section>
@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">2. Information We Collect</h2>
         <p>
-          Lorem ipsum dolor sit amet. We may collect personal information that you voluntarily provide
+          We may collect personal information that you voluntarily provide
           to us when you use our services, including:
         </p>
         <ul className="list-disc list-inside mt-2">
@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">5. Cookies and Tracking Technologies</h2>
         <p>
-          Lorem ipsum dolor sit amet. We use cookies and similar technologies to track user activity
+          We use cookies and similar technologies to track user activity
           and improve experiences. You may control cookies through your browser settings.
         </p>
       </section>
@@ -105,10 +105,10 @@ const PrivacyPolicy = () => {
           <br />
           <strong>Email:</strong>{' '}
           <a
-            href="mailto:info@codesino.com"
+            href="mailto:support@codesinodev.com"
             className="underline hover:text-white"
           >
-            info@codesino.com
+            support@codesinodev.com
           </a>
         </p>
       </section>
