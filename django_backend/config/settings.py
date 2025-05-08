@@ -33,7 +33,14 @@ LOGGING = {
     },
 }
 
-ALLOWED_HOSTS = ['codesino.vercel.app', 'codesinodev.com', 'codesinodev.onrender.com', 'www.codesinodev.com' 'localhost:3000']
+ALLOWED_HOSTS = [
+    'codesino.vercel.app',
+    'codesinodev.com',
+    'codesino.onrender.com',
+    'www.codesinodev.com',
+    'localhost:3000'
+]
+
 
 
 # Application definition
