@@ -154,5 +154,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://codesino.vercel.app",
     "https://www.codesinodev.com",
-    "https://codesinodev.onrender.com",
+    "https://codesino.onrender.com",
 ]
