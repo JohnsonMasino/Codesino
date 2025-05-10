@@ -15,6 +15,11 @@ const slides = [
     description: "Experience the architectural beauty with modern elegance.",
   },
   {
+    title: "Blockchain & Web3 Solutions",
+    image: "/web3.webp",
+    description: "Get the most out of our blockchain and web3 solutions.",
+  },
+  {
     title: "Cloud Services",
     image: "/cloud.webp",
     description: "Explore cityscapes filled with energy and innovation.",
@@ -104,8 +109,9 @@ const HeroWithSlider = () => {
           <h1 className="hero-headline">We Build. We Design. We Deliver.</h1>
           <p className="hero-subtext">
             Codesino is your all-in-one software powerhouse—delivering stunning
-            websites, cutting-edge mobile apps, immersive graphics, and secure
-            global exchanges. Join us to shape the future with tech.
+            websites, cutting-edge mobile apps, blockchain & web3 solutions,
+            immersive graphics, and secure global exchanges. Join us to shape
+            the future with tech.
           </p>
           <div className="button-group">
             <a href="/services" className="hero-btn">

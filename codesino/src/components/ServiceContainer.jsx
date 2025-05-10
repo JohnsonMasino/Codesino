@@ -14,6 +14,12 @@ const services = [
       "Reach your users on-the-go with native and cross-platform mobile apps. We design sleek, intuitive experiences for both iOS and Android using modern tools. From MVPs to enterprise-grade apps, our mobile solutions ensure performance, scalability, and top-tier user experience.",
   },
   {
+    title: "Blockchain Web3 Solutions",
+    image: "/web3.webp",
+    description:
+      "Decentralized technologies are shaping the future — and we're here to help you lead it. From smart contract development to NFT integrations and secure dApps, we build scalable, trustless solutions tailored to your business goals. Whether you're launching a crypto project, DAO, or Web3-enabled product, our team ensures secure architecture, seamless UX, and blockchain reliability that users can trust.",
+  },
+  {
     title: "Cloud Services",
     image: "/cloud.jpg",
     description:
