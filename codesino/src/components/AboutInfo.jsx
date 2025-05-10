@@ -8,6 +8,7 @@ import {
   FaCloud,
   FaPaintBrush,
   FaFilm,
+  FaCube,
   FaGraduationCap,
   FaExchangeAlt,
 } from 'react-icons/fa';
@@ -37,15 +38,15 @@ const AboutInfo = () => {
       link: "/services",
     },
     {
-      icon: <FaCogs size={32} />,
-      title: "API Development",
-      description: "Robust and scalable APIs built with best practices for your app ecosystem.",
+      icon: <FaCube size={32} />,
+      title: "Blockchain & Web3 Solutions",
+      description: "Smart contracts, dApps, and decentralized platforms built securely for the future of the internet.",
       link: "/services",
     },
     {
-      icon: <FaRocket size={32} />,
-      title: "Product Development",
-      description: "We help ideate, design, build, and launch your product from the ground up.",
+      icon: <FaCogs size={32} />,
+      title: "API Development",
+      description: "Robust and scalable APIs built with best practices for your app ecosystem.",
       link: "/services",
     },
     {
