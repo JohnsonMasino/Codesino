@@ -59,4 +59,3 @@ const CreateBlogPost = () => {
 
 export default CreateBlogPost;
 
-
