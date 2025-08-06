@@ -48,7 +48,7 @@ const Footer = () => {
         {/* Contact Us */}
         <div className="footer-contact">
           <h3 className="text-lg font-semibold mb-3 text-gradient">Contact Us</h3>
-          <p className="text-start text-gray-400">Email: contact@codesinodev.com</p>
+          <p className="text-start text-gray-400 ">Email: contact@codesinodev.com</p>
           <p className="text-start text-gray-400">Help: support@codesinodev.com</p>
           <p className="text-start text-gray-400">Phone: +234 903 620 6457</p>
           <p className="text-start text-gray-400">Address: G.R.A Enugu, Nigeria.</p>
