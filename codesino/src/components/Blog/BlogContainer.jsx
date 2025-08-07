@@ -33,24 +33,22 @@ const BlogContainer = () => {
   const generateDummyPosts = (startId, count) => {
     return Array.from({ length: count }).map((_, index) => ({
       id: startId + index,
-      title: `Code Like A Pro #${startId + index + 1}`,
+      title: `This Post is Loading... #${startId + index + 1}`,
       description:
-        'Perfect for modern tropical spaces, baroque-inspired interiors, or cozy corners.',
+        'This is a post card but the posts are still spinning up from the server. Hold on a little longer...',
       image:
-        'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
+        'https://icons8.com/preloaders/img/ajax-loader-preview.png',
       postLink: `/blog/dummy-${startId + index + 1}`,
       id: `dummy-${startId + index}`,
       isDummy: true,
     }));
   };
 
-  // Fill the rest of the slots with dummy posts if real posts are not enough
   const filledPosts = [
     ...realPosts,
     ...generateDummyPosts(realPosts.length, totalDisplayPosts - realPosts.length),
   ];
 
-  // Pagination logic
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filledPosts.slice(indexOfFirstPost, indexOfLastPost);
