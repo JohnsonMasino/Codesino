@@ -38,7 +38,8 @@ const BlogContainer = () => {
         'Perfect for modern tropical spaces, baroque-inspired interiors, or cozy corners.',
       image:
         'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
-      postLink: `/blog/${startId + index + 1}`,
+      postLink: `/blog/dummy-${startId + index + 1}`,
+      id: `dummy-${startId + index}`,
       isDummy: true,
     }));
   };
