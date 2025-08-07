@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 import Footer from '../components/Footer'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
@@ -12,8 +13,13 @@ const Blog = () => {
     <>
         <ResponsiveAppBar/>
         <BlogContainer/>
+
+        <div className="mt-8 mb-8 text-center">
+          <Link to="/" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+            ← Go Back
+          </Link>
+        </div>
         
-        <Footer/>
                                       
     
     
