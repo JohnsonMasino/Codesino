@@ -10,11 +10,11 @@ const teamMembers = [
     profileLink: "https://x.com/masino_oficial",
   },
   {
-    name: "Emmanuel Meeky",
+    name: "Meekemma",
     role: "Co Founder & Lead Developer",
     description:
-      "Meeky streamlines our deployments and infrastructure, ensuring stability, security, and efficiency across environments.",
-    image: "/Meeky.jpeg",
+      "Meekemma streamlines our deployments and infrastructure, ensuring stability, security, and efficiency across environments.",
+    image: "/Meeky.JPG",
     profileLink: "https://x.com/Meek_emma007",
   },
 ];
