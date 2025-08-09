@@ -9,7 +9,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa';
-import logo from '../assets/images/logo2.png';
+import logo from '../assets/images/logo1.png';
 
 const pages = [
   { name: 'Home', path: '/' },
