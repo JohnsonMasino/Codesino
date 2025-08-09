@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo1.png';
 import { loadGoogleAnalytics } from '../utils/Analytics';
 
 const CookieConsent = () => {
